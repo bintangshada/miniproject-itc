@@ -6,7 +6,6 @@ async function getKataAnime() {
             console.error("Something wrong with API!");
         }
         const json = await response.json();
-        console.log(json);
         const result = json.result;
         let kataKataHariIniBang = "";
         result.forEach((element) => {

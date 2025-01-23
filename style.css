@@ -230,3 +230,8 @@ a {
         max-width: fit-content;
     }
 }
+
+@keyframes rotate360 {
+    to { transform: rotate(360deg); }
+  }
+.background-sosmed:hover img { animation: 3s rotate360 infinite linear; }
