@@ -1,4 +1,4 @@
-async function getKataAnime() {
+async function getKataAnime( lang = "id") {
     const url = "https://katanime.vercel.app/api/getrandom";
     try {
         const response = await fetch(url);
@@ -9,7 +9,8 @@ async function getKataAnime() {
         const result = json.result;
         let kataKataHariIniBang = "";
         result.forEach((element) => {
-            kataKataHariIniBang += element.indo + " - " + element.character + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; ";
+            const text = lang == "id" ? element.indo : element.english;
+            kataKataHariIniBang += text + " - " + element.character + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; " + " &nbsp; &nbsp; ";
         });
         document.getElementById("kataAnime").innerHTML = kataKataHariIniBang;
     } catch (err) {
@@ -17,5 +18,12 @@ async function getKataAnime() {
     }
 }
 
-getKataAnime();
+document.getElementById("idLink").addEventListener("click", function(){
+    getKataAnime("id");
+});
 
+document.getElementById("enLink").addEventListener("click", function(){
+    getKataAnime("en");
+});
+
+getKataAnime();

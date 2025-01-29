@@ -148,6 +148,14 @@ a {
     color: #27821e;
 }
 
+.lang {
+    color: black;
+}
+
+.lang:hover {
+    color: #b90f0f;
+}
+
 @keyframes blinker {
     50% {
       opacity: 0;
