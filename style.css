@@ -124,6 +124,19 @@ a {
     left: 10px;
 }
 
+.image-hover {
+    width: 360px;
+    height: 500px;
+    background-image: url('me.jpeg');
+    background-size: cover;
+    transition: background-image 0.2s ease-in-out;
+}
+
+.image-hover:hover {
+    background-image: url('jeet-dhanoa-sR1BaDlRSKM-unsplash.jpg');
+    animation: blinker 0.3s linear infinite;
+}
+
 .blink {
   animation: blinker 1s linear infinite;
 } 
